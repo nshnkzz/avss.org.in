@@ -1,0 +1,34 @@
+/* ── Design tokens — single source of truth ── */
+:root {
+  /* Brand colours */
+  --saffron:        #D85A1F;
+  --saffron-light:  #FFEFE2;
+  --saffron-dark:   #9F3F0F;
+  --navy:           #152748;
+  --navy-light:     #EDF1F8;
+  --navy-mid:       #2D4A7A;
+  --green:          #1F6F2A;
+  --green-light:    #E1F1E3;
+
+  /* Text */
+  --text:           #16161A;
+  --text-muted:     #4A4F5A;
+  --white:          #FFFFFF;
+  --off-white:      #FAFAF7;
+  --border:         #D6D9DE;
+  --focus:          #FFC107;
+
+  /* Sizing — overridden by a11y modes */
+  --font-size-base: 17px;
+  --line-height:    1.65;
+  --tap-min:        48px;
+
+  /* Shape */
+  --radius:    14px;
+  --radius-sm: 10px;
+  --shadow:    0 4px 20px rgba(21, 39, 72, 0.10);
+
+  /* Fonts */
+  --font-en: 'Poppins', sans-serif;
+  --font-hi: 'Noto Sans Devanagari', sans-serif;
+}

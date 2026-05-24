@@ -1,0 +1,180 @@
+/* ── Plan cards grid ── */
+.plansGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Stack to single column on small screens */
+@media (max-width: 600px) {
+  .plansGrid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+}
+
+/* ── Individual plan card ── */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  border: 3px solid var(--border);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  /* No overflow:hidden — badge is inside now, not hanging above */
+}
+
+.card.featured {
+  border-color: var(--saffron);
+  box-shadow: 0 10px 36px rgba(216, 90, 31, 0.15);
+}
+
+/* Badge — inside the card, no clipping risk */
+.badge {
+  background: var(--saffron);
+  color: white;
+  border-radius: 6px;
+  padding: 0.35rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  /* Full-width strip at top of card */
+  margin-left: -1.75rem;
+  margin-right: -1.75rem;
+  margin-top: -1.75rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 0.6rem 1rem;
+}
+
+.cardTop {
+  margin-bottom: 1.25rem;
+}
+
+.planName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--saffron);
+  line-height: 1;
+}
+
+.period {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Features list */
+.features {
+  list-style: none;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-bottom: 1.75rem;
+  flex: 1; /* pushes button to bottom */
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.55rem 0;
+  font-size: 0.98rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.45;
+}
+
+.feature:last-child { border-bottom: none; }
+
+.check { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.no    { color: var(--text-muted); flex-shrink: 0; }
+
+/* ── Comparison table ── */
+.compareHeader { margin-bottom: 1.5rem; }
+
+.table {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: white;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 100px 120px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.row:last-child { border-bottom: none; }
+
+.rowAlt { background: var(--off-white); }
+
+.tableHead {
+  background: var(--navy);
+  color: white;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.featureCol {
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.tableHead .featureCol { color: rgba(255,255,255,0.85); }
+
+.planCol {
+  padding: 0.85rem 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  border-left: 1px solid var(--border);
+}
+
+.tableHead .planCol {
+  color: white;
+  border-left-color: rgba(255,255,255,0.2);
+  font-size: 0.85rem;
+}
+
+.featuredCol {
+  background: rgba(216, 90, 31, 0.06);
+}
+
+.tableHead .featuredCol {
+  background: var(--saffron);
+}
+
+.yes { color: var(--green); font-weight: 700; font-size: 1.15rem; }
+.no  { color: var(--text-muted); font-size: 1rem; }
+
+.priceRow {
+  background: var(--navy-light);
+  font-weight: 700;
+}
+.priceRow .planCol { font-size: 1.05rem; color: var(--saffron); }
+
+.tableCta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Responsive table — collapse plan name columns on very small screens */
+@media (max-width: 420px) {
+  .row {
+    grid-template-columns: 1fr 80px 90px;
+  }
+  .featureCol { padding: 0.75rem 0.75rem; font-size: 0.88rem; }
+  .planCol    { padding: 0.75rem 0.4rem; font-size: 0.88rem; }
+}

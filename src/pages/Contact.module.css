@@ -1,0 +1,113 @@
+/* ── Two-column layout: info left, form right ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Stack to single column below 700px */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ── Info panel ── */
+.infoPanel {}
+
+.infoTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1.75rem;
+  line-height: 1.2;
+}
+
+.infoCards {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 1.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: white;
+}
+
+/* Each info card is a row — no overflow, no clipping */
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  /* min-height ensures touch target even for short labels */
+  min-height: var(--tap-min);
+}
+.infoCard:last-child { border-bottom: none; }
+.infoCard:nth-child(even) { background: var(--off-white); }
+
+.infoIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  border: 2px solid var(--saffron-dark);
+  /* fixed size — never squishes on small screen */
+}
+
+.infoText {
+  flex: 1;
+  min-width: 0; /* allows text to wrap instead of overflow */
+}
+
+.infoText h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.infoText p,
+.infoLink {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.55;
+  word-break: break-word; /* long email/address wraps cleanly */
+}
+
+.infoLink {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.infoLink:hover { color: var(--saffron); }
+
+/* Big phone CTA — prominent on mobile */
+.callBtn {
+  width: 100%;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 1rem;
+  word-break: break-all; /* phone number wraps if needed */
+}
+
+/* ── Form panel ── */
+.formPanel {
+  /* nothing special needed — form-box handles its own styling */
+}
+
+/* On mobile, form comes second (naturally after info) */
+@media (max-width: 700px) {
+  .infoTitle { font-size: 1.4rem; }
+}

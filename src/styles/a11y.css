@@ -1,0 +1,36 @@
+/* ── Accessibility overrides ── */
+
+/* Text size */
+html.a11y-large  { --font-size-base: 20px; --tap-min: 54px; }
+html.a11y-xlarge { --font-size-base: 23px; --tap-min: 60px; --line-height: 1.85; }
+
+/* High contrast */
+html.a11y-contrast {
+  --saffron:        #B23E00;
+  --saffron-light:  #FFFFFF;
+  --saffron-dark:   #7A2A00;
+  --navy:           #000000;
+  --navy-light:     #FFFFFF;
+  --navy-mid:       #000000;
+  --text:           #000000;
+  --text-muted:     #111111;
+  --white:          #FFFFFF;
+  --off-white:      #FFFFFF;
+  --border:         #000000;
+  --shadow:         none;
+}
+html.a11y-contrast .card,
+html.a11y-contrast .plan-card,
+html.a11y-contrast .form-input,
+html.a11y-contrast .filter-btn { border: 2.5px solid #000 !important; }
+html.a11y-contrast .page-hero  { background: #000; border-bottom-color: #B23E00; }
+html.a11y-contrast .section-navy { background: #000; }
+
+/* Reduced motion */
+html.a11y-no-motion *,
+html.a11y-no-motion *::before,
+html.a11y-no-motion *::after {
+  animation-duration:  0.01ms !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior:     auto   !important;
+}

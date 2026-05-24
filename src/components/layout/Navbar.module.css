@@ -1,0 +1,153 @@
+.nav {
+  background: white;
+  border-bottom: 2px solid var(--border);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 52px; /* below a11y bar */
+  z-index: 100;
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.logoIcon {
+  width: 52px; height: 52px;
+  background: var(--saffron);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 700; color: white;
+  border: 3px solid var(--navy);
+  flex-shrink: 0;
+}
+.logoText { font-weight: 700; font-size: 1rem; line-height: 1.25; }
+.logoText small { display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 500; margin-top: 2px; }
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+.link {
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-height: var(--tap-min);
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.link:hover { background: var(--navy-light); color: var(--navy); }
+.link.active { color: var(--saffron); background: var(--saffron-light); }
+
+.langBtn {
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--navy);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  min-height: var(--tap-min);
+  border: 2px solid var(--navy);
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: 0.25rem;
+  transition: background 0.15s;
+}
+.langBtn:hover { background: var(--navy-mid); }
+
+.donateBtn {
+  margin-left: 0.35rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius-sm);
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  min-height: var(--tap-min);
+  border: 3px solid var(--green);
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.donateBtn:hover { background: #155A1F; border-color: #155A1F; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.75rem;
+  width: var(--tap-min); height: var(--tap-min);
+  align-items: center; justify-content: center;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius-sm);
+  background: white;
+  cursor: pointer;
+}
+.ham1, .ham2, .ham3 {
+  display: block;
+  width: 22px; height: 2.5px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Mobile menu */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-top: 2px solid var(--border);
+  padding: 0.5rem 1.5rem 1.25rem;
+}
+.mobileLink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  min-height: var(--tap-min);
+  text-align: left;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+.mobileLink:last-child { border-bottom: none; }
+.mobileActive { color: var(--saffron); }
+.mobileDonate { color: var(--green); font-weight: 700; }
+.mobileLang { display: flex; align-items: center; padding: 1rem 0.5rem; font-size: 1rem; font-weight: 600; color: var(--navy-mid); border: none; background: none; font-family: inherit; cursor: pointer; min-height: var(--tap-min); }
+
+@media (max-width: 960px) {
+  .links { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 640px) {
+  .nav { top: 0; }
+  .logoText span { font-size: 0.88rem; }
+}

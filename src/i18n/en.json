@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "membership": "Members",
+    "schemes": "Schemes",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "donate": "Donate",
+    "join": "Join"
+  },
+  "a11y": {
+    "label": "Accessibility",
+    "text_size": "Text size",
+    "normal": "Normal",
+    "large": "Large",
+    "xlarge": "X-Large",
+    "contrast": "High Contrast",
+    "motion": "Reduce Motion",
+    "skip": "Skip to main content"
+  },
+  "hero": {
+    "eyebrow": "Singrauli · Madhya Pradesh",
+    "title_1": "Helping ",
+    "title_bold": "Persons with Disabilities",
+    "title_2": " live with dignity",
+    "subtitle": "विकलांगजनों के लिए समर्पित",
+    "body": "We are an NGO based in Singrauli, MP. We help PWD get government ID cards, pensions, wheelchairs, and equal opportunities — free of charge.",
+    "btn_join": "Become a Member",
+    "btn_donate": "Donate Now",
+    "btn_help": "Get Help"
+  },
+  "services": {
+    "tag": "Our Work",
+    "title": "How We Help You",
+    "subtitle": "Six ways we support persons with disabilities and their families — all free.",
+    "items": [
+      { "icon": "🪪", "title": "Get ID Cards",           "desc": "We help you make UDID card, disability certificate, and Samagra ID — free." },
+      { "icon": "💰", "title": "Apply for Pension",      "desc": "We fill forms and follow up so your monthly pension reaches your bank account." },
+      { "icon": "🦽", "title": "Wheelchair / Hearing Aid","desc": "We help you get free assistive devices through the ADIP government scheme." },
+      { "icon": "🎓", "title": "Education & Scholarship","desc": "We guide students to apply for scholarships and inclusive schools." },
+      { "icon": "⚖️", "title": "Legal Help",             "desc": "Facing discrimination at work or school? We connect you with free legal aid." },
+      { "icon": "🏘️", "title": "Village Camps",          "desc": "We come to your village. No need to travel. Just bring your papers." }
+    ]
+  },
+  "impact": {
+    "tag": "Our Impact",
+    "title": "Our Impact So Far",
+    "subtitle": "Real numbers from our work on the ground in Madhya Pradesh.",
+    "stats": [
+      { "num": "500+",  "label": "People Helped" },
+      { "num": "20+",   "label": "Govt. Schemes" },
+      { "num": "150+",  "label": "UDID Cards Made" },
+      { "num": "5",     "label": "Years of Service" }
+    ]
+  },
+  "membership": {
+    "tag": "Join the Movement",
+    "title": "Become a Member",
+    "subtitle": "Join hands with us. Your membership funds our work and gives you a voice.",
+    "plans": [
+      {
+        "name": "Monthly Member",
+        "price": "₹100",
+        "period": "per month",
+        "features": ["Member ID Card", "Updates & newsletter", "Priority helpline access", "Voting at yearly meeting"]
+      },
+      {
+        "name": "Yearly Member",
+        "price": "₹999",
+        "period": "per year",
+        "badge": "Best Value · Save ₹200",
+        "features": ["Member ID Card", "Updates & newsletter", "Priority helpline access", "Voting at yearly meeting", "Full annual report", "Free legal advice", "Event invites", "2 months free"]
+      }
+    ],
+    "join_btn": "Join Now",
+    "form_title": "Register as Member",
+    "call_notice": "Need help filling this form? Call us at +91 98765 43210 — we will fill it for you.",
+    "fields": {
+      "name":       "Full Name",
+      "phone":      "Phone Number",
+      "phone_hint": "We will call you on this number",
+      "email":      "Email Address (optional)",
+      "district":   "District",
+      "plan":       "Choose Plan",
+      "disability": "Type of Disability (optional)",
+      "districts":  ["Singrauli", "Sidhi", "Rewa", "Satna", "Shahdol", "Other"],
+      "plan_monthly": "Monthly — ₹100 / month",
+      "plan_yearly":  "Yearly — ₹999 / year",
+      "disabilities": ["Locomotor Disability", "Visual Impairment", "Hearing Impairment", "Intellectual Disability", "Cerebral Palsy", "Mental Illness", "Multiple Disabilities", "Other"],
+      "submit": "Submit My Application",
+      "success": "🎉 Thank you! We received your application. We will call you in 2 working days.",
+      "error_name": "Please enter your name",
+      "error_phone": "Please enter your phone number",
+      "error_district": "Please select your district",
+      "error_plan": "Please choose a plan"
+    }
+  },
+  "donate": {
+    "tag": "Donate",
+    "title": "Support Our Work",
+    "subtitle": "Every rupee directly helps a person with disability in Singrauli. Choose any amount.",
+    "freq_label": "Donation type",
+    "freq_one": "One-time",
+    "freq_monthly": "Every month",
+    "amount_label": "Choose amount (₹)",
+    "custom_label": "Or enter your own amount",
+    "presets": [500, 1000, 2500, 5000, 10000, 25000],
+    "name_label": "Your Name",
+    "phone_label": "Phone Number",
+    "email_label": "Email (for 80G receipt)",
+    "pan_label": "PAN Number (for 80G receipt)",
+    "pan_hint": "Optional — needed only for tax exemption certificate",
+    "submit": "Donate Now",
+    "month_suffix": "/ month",
+    "tax_note": "All donations are 80G tax-exempt",
+    "secure": "Secure payment",
+    "success": "🙏 Thank you for your generous donation! You will get an 80G receipt within 7 days.",
+    "impact_title": "What your donation funds",
+    "impact": [
+      { "amount": "₹500",    "label": "One UDID camp registration" },
+      { "amount": "₹2,000",  "label": "A pair of crutches" },
+      { "amount": "₹8,000",  "label": "One basic wheelchair" },
+      { "amount": "₹15,000", "label": "A village awareness camp" }
+    ],
+    "bank_title": "Direct bank / UPI transfer",
+    "bank": {
+      "name":    "Aadarsh Viklang Sewa Sangh",
+      "account": "1234 5678 9012",
+      "ifsc":    "SBIN0001234",
+      "branch":  "SBI, Singrauli",
+      "upi":     "aadarshviklang@upi"
+    },
+    "bank_note": "After bank transfer, send your name and PAN to info@aadarshviklang.org for the 80G receipt.",
+    "error_name": "Please enter your name",
+    "error_phone": "Please enter your phone number",
+    "error_amount": "Please enter an amount of at least ₹10"
+  },
+  "schemes": {
+    "tag": "Government Schemes",
+    "title": "Government Schemes for PWD",
+    "subtitle": "Step-by-step guide. We can do this for you — free of charge.",
+    "filter_all": "All Schemes",
+    "filter_central": "Central Govt.",
+    "filter_state": "State (MP)",
+    "docs_label": "Documents Needed",
+    "help_title": "Need help with any scheme?",
+    "help_body": "Our team helps you fill forms, gather papers, and follow up with officials — all free.",
+    "help_btn": "Talk to Our Team"
+  },
+  "gallery": {
+    "tag": "Our Work",
+    "title": "Photo Gallery",
+    "subtitle": "Moments from our camps, workshops, and the people we serve.",
+    "filter_all": "All",
+    "filter_camps": "Camps",
+    "filter_events": "Events",
+    "filter_dist": "Distribution",
+    "close": "Close photo"
+  },
+  "about": {
+    "tag": "About Us",
+    "title": "Our Story",
+    "body_1": "Aadarsh Viklang Sewa Sangh was started in Singrauli by a group of disability rights activists who saw firsthand how hard it is for PWD to access their rights and government benefits.",
+    "body_2": "We are a registered NGO. Our small dedicated team works across Singrauli, Sidhi, and nearby districts to ensure no person is left behind because of their disability.",
+    "team_title": "Our Team",
+    "mission_title": "Our Mission",
+    "mission_quote": "\"To empower every Person with Disability in MP through equal access to rights, government schemes, education, and livelihood opportunities.\"",
+    "badges": ["RPWD Act 2016 Compliant", "UN CRPD Aligned", "80G Tax-Exempt"]
+  },
+  "contact": {
+    "tag": "Get in Touch",
+    "title": "Contact Us",
+    "subtitle": "We are here to help. Call us, write to us, or visit our office.",
+    "address_label": "Our Office",
+    "address": "Near Bus Stand, Civil Lines, Singrauli, MP — 486886",
+    "phone_label": "Helpline",
+    "phone": "+91 98765 43210",
+    "email_label": "Email Us",
+    "email": "info@aadarshviklang.org",
+    "hours_label": "Office Hours",
+    "hours": "Monday to Saturday · 10 AM to 5 PM",
+    "form_title": "Send Us a Message",
+    "name_label": "Your Name",
+    "phone_field": "Phone Number",
+    "message_label": "How can we help?",
+    "submit": "Send Message",
+    "success": "Message sent! We will reply within 1 working day.",
+    "error_name": "Please enter your name",
+    "error_phone": "Please enter your phone number",
+    "error_message": "Please enter your message"
+  },
+  "footer": {
+    "about": "An NGO helping Persons with Disabilities in Singrauli, Madhya Pradesh.",
+    "links_title": "Pages",
+    "support_title": "Get Help With",
+    "support_links": ["UDID Card", "Pension", "Wheelchair / Aids", "Scholarship"],
+    "legal_title": "Legal",
+    "legal_links": ["Privacy Policy", "Terms of Use", "80G Certificate", "Annual Reports"],
+    "copyright": "© 2026 Aadarsh Viklang Sewa Sangh. All rights reserved.",
+    "reg": "Registered NGO · Singrauli, MP"
+  }
+}
