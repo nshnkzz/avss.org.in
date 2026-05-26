@@ -1,39 +1,54 @@
 import { useTranslation } from 'react-i18next'
 import MembershipForm from '../components/forms/MembershipForm'
 import styles from './Membership.module.css'
+import { Helmet } from 'react-helmet-async'
 
 function PlanCard({ plan, featured, onJoin, t }) {
   return (
-    <div className={`${styles.card} ${featured ? styles.featured : ''}`}>
-      {/* Badge sits INSIDE the card at the top — never clipped */}
-      {plan.badge && (
-        <div className={styles.badge}>{plan.badge}</div>
-      )}
+      <>
+        <Helmet>
+          <title>Become a Member | AVSS Singrauli NGO</title>
+          <meta name="description" content="Aadarsh Viklang Sewa Sangh (AVSS) is an NGO in Singrauli, Madhya Pradesh helping Persons with Disabilities access UDID cards, government pensions, wheelchairs and legal aid. Free help in Hindi." />
+          <meta name="keywords" content="Aadarsh Viklang Sewa Sangh, AVSS, NGO Singrauli, विकलांग सेवा संघ, PWD NGO Madhya Pradesh, disability NGO MP, UDID card Singrauli" />
+          <link rel="canonical" href="https://avss.org.in" />
 
-      <div className={styles.cardTop}>
-        <p className={styles.planName}>{plan.name}</p>
-        <div className={styles.price}>
-          {plan.price}
-          <span className={styles.period}> / {plan.period}</span>
+          {/* Open Graph — for WhatsApp/Facebook link previews */}
+          <meta property="og:title" content="Aadarsh Viklang Sewa Sangh | NGO for PWD in Singrauli" />
+          <meta property="og:description" content="Helping Persons with Disabilities in Singrauli, MP access government schemes, pensions and assistive devices." />
+          <meta property="og:url" content="https://avss.org.in" />
+          <meta property="og:type" content="website" />
+        </Helmet>
+        <div className={`${styles.card} ${featured ? styles.featured : ''}`}>
+          {/* Badge sits INSIDE the card at the top — never clipped */}
+          {plan.badge && (
+            <div className={styles.badge}>{plan.badge}</div>
+          )}
+
+          <div className={styles.cardTop}>
+            <p className={styles.planName}>{plan.name}</p>
+            <div className={styles.price}>
+              {plan.price}
+              <span className={styles.period}> / {plan.period}</span>
+            </div>
+          </div>
+
+          <ul className={styles.features}>
+            {plan.features.map((f, i) => (
+              <li key={i} className={styles.feature}>
+                <span className={styles.check} aria-hidden="true">✓</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <button
+            className={`btn btn-full ${featured ? 'btn-primary' : 'btn-outline'}`}
+            onClick={onJoin}
+          >
+            {t('membership.join_btn')}
+          </button>
         </div>
-      </div>
-
-      <ul className={styles.features}>
-        {plan.features.map((f, i) => (
-          <li key={i} className={styles.feature}>
-            <span className={styles.check} aria-hidden="true">✓</span>
-            {f}
-          </li>
-        ))}
-      </ul>
-
-      <button
-        className={`btn btn-full ${featured ? 'btn-primary' : 'btn-outline'}`}
-        onClick={onJoin}
-      >
-        {t('membership.join_btn')}
-      </button>
-    </div>
+      </>
   )
 }
 

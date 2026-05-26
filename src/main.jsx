@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { I18nextProvider } from 'react-i18next'
+import { HelmetProvider } from 'react-helmet-async'
 import i18n from './i18n'
 import { A11yProvider } from './context/A11yContext'
 import App from './App'
@@ -16,13 +17,15 @@ if (savedLang === 'hi') document.body.classList.add('lang-hi')
 document.documentElement.lang = savedLang
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <I18nextProvider i18n={i18n}>
-        <A11yProvider>
-          <App />
-        </A11yProvider>
-      </I18nextProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <HelmetProvider>
+    <React.StrictMode>
+      <BrowserRouter>
+        <I18nextProvider i18n={i18n}>
+          <A11yProvider>
+            <App />
+          </A11yProvider>
+        </I18nextProvider>
+      </BrowserRouter>
+    </React.StrictMode>
+  </HelmetProvider>
 )

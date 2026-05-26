@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import team from '../data/team'
 
 export default function About() {
@@ -10,6 +11,18 @@ export default function About() {
 
   return (
     <>
+      <Helmet>
+        <title>About Us | Aadarsh Viklang Sewa Sangh Singrauli</title>
+        <meta name="description" content="Aadarsh Viklang Sewa Sangh (AVSS) is an NGO in Singrauli, Madhya Pradesh helping Persons with Disabilities access UDID cards, government pensions, wheelchairs and legal aid. Free help in Hindi." />
+        <meta name="keywords" content="Aadarsh Viklang Sewa Sangh, AVSS, NGO Singrauli, विकलांग सेवा संघ, PWD NGO Madhya Pradesh, disability NGO MP, UDID card Singrauli" />
+        <link rel="canonical" href="https://avss.org.in/about" />
+
+        {/* Open Graph — for WhatsApp/Facebook link previews */}
+        <meta property="og:title" content="Aadarsh Viklang Sewa Sangh | NGO for PWD in Singrauli" />
+        <meta property="og:description" content="Helping Persons with Disabilities in Singrauli, MP access government schemes, pensions and assistive devices." />
+        <meta property="og:url" content="https://avss.org.in" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <div className="page-hero">
         <div className="container">
           <h1>{t('about.title')}</h1>
