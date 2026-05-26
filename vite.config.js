@@ -8,7 +8,6 @@ export default defineConfig({
     sitemap({
       hostname: 'https://avss.org.in',
       dynamicRoutes: [
-        '/',
         '/about',
         '/membership',
         '/donate',
