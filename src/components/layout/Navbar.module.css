@@ -34,6 +34,7 @@
 }
 .logoText { font-weight: 700; font-size: 1rem; line-height: 1.25; }
 .logoText small { display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 500; margin-top: 2px; }
+.nameWords { display: flex; gap: 0.3em; flex-wrap: nowrap; }
 
 .links {
   display: flex;
@@ -102,6 +103,7 @@
   border-radius: var(--radius-sm);
   background: white;
   cursor: pointer;
+  flex-shrink: 0;
 }
 .ham1, .ham2, .ham3 {
   display: block;
@@ -149,5 +151,148 @@
 }
 @media (max-width: 640px) {
   .nav { top: 0; }
-  .logoText span { font-size: 0.88rem; }
+  .logo { min-width: 0; flex-shrink: 1; }
+  .logoText { min-width: 0; }
+  .logoText span { font-size: 0.9rem; }
 }
+/* hide subtitle */
+@media (max-width: 500px) {
+  .logoSub { display: none; }
+}
+/* drop "Sangh / संघ" */
+@media (max-width: 430px) {
+  .w4 { display: none; }
+}
+/* only icon + hamburger */
+@media (max-width: 380px) {
+  .logoText { display: none; }
+}
+.dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropbtn {
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-height: var(--tap-min);
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.dropbtn:hover { background: var(--navy-light); color: var(--navy); }
+.dropdown:hover .dropbtn { background: var(--navy-light); color: var(--navy); }
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  min-width: 160px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 200;
+}
+
+.dropdownContent a {
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s;
+}
+.dropdownContent a:hover { background: var(--navy-light); color: var(--navy); }
+
+.dropdown:hover .dropdownContent { display: block; }
+
+/* Mobile collapsible dropdown */
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobileDropbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  min-height: var(--tap-min);
+  text-align: left;
+}
+
+.mobileDropbtn:hover { background: var(--navy-light); }
+
+.chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.22s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.mobileDropContent {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+}
+
+.mobileDropContentOpen {
+  max-height: 300px;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobileDropContent {
+    transition: none;
+  }
+}
+
+.mobileNestedLink {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0.75rem 0.8rem 1.5rem;
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  min-height: var(--tap-min);
+  background: var(--navy-light);
+}
+
+.mobileNestedLink:last-child { border-bottom: none; }
+.mobileNestedLink:hover { background: var(--navy-light); color: var(--navy); }
+.mobileNestedLink.mobileActive { color: var(--saffron); }

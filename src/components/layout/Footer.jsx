@@ -4,6 +4,8 @@ import styles from './Footer.module.css'
 
 export default function Footer() {
   const { t } = useTranslation()
+  const PAGES = [['/', 'home'], ['/about', 'about'], ['/membership', 'membership'],
+                ['/schemes', 'schemes'], ['/gallery', 'gallery'], ['/contact', 'contact'], ['/circulars', 'circulars']]
 
   return (
     <footer className={styles.footer}>
@@ -20,8 +22,7 @@ export default function Footer() {
           <div className={styles.col}>
             <h4>{t('footer.links_title')}</h4>
             <ul>
-              {[['/', 'home'], ['/about', 'about'], ['/membership', 'membership'],
-                ['/schemes', 'schemes'], ['/gallery', 'gallery'], ['/contact', 'contact']].map(([path, key]) => (
+              {PAGES.map(([path, key]) => (
                 <li key={path}><Link to={path}>{t(`nav.${key}`)}</Link></li>
               ))}
             </ul>

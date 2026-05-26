@@ -4,13 +4,16 @@ import { useTranslation } from 'react-i18next'
 import i18n from '../../i18n'
 import styles from './Navbar.module.css'
 
-const PAGES = ['/', '/about', '/membership', '/schemes', '/gallery', '/contact']
-const KEYS  = ['home', 'about', 'membership', 'schemes', 'gallery', 'contact']
+const PAGES = ['/', '/about', '/membership', '/gallery', '/contact']
+const KEYS  = ['home', 'about', 'membership', 'gallery', 'contact']
+const DROPDOWNPAGES = ['/schemes', '/circulars']
+const DROPDOWNKEYS = ['schemes', 'circulars']
 
 export default function Navbar() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
+  const [mobileDropOpen, setMobileDropOpen] = useState(false)
 
   const switchLang = () => {
     const next = i18n.language === 'en' ? 'hi' : 'en'
@@ -20,7 +23,7 @@ export default function Navbar() {
     document.documentElement.lang = next
   }
 
-  const close = () => setOpen(false)
+  const close = () => { setOpen(false); setMobileDropOpen(false) }
 
   return (
     <nav className={styles.nav} aria-label="Main navigation">
@@ -29,8 +32,13 @@ export default function Navbar() {
         <NavLink to="/" className={styles.logo} aria-label="Aadarsh Viklang Sewa Sangh — Home" onClick={close}>
           <div className={styles.logoIcon} aria-hidden="true">आ</div>
           <div className={styles.logoText}>
-            <span>{i18n.language === 'en' ? 'Aadarsh Viklang Sewa Sangh' : 'आदर्श विकलांग सेवा संघ'}</span>
-            <small>NGO · {i18n.language === 'en' ? 'Singrauli, MP' : 'सिंगरौली, MP'}</small>
+            <span className={styles.nameWords}>
+              <span className={styles.w1}>{i18n.language === 'en' ? 'Aadarsh' : 'आदर्श'}</span>
+              <span className={styles.w2}>{i18n.language === 'en' ? 'Viklang' : 'विकलांग'}</span>
+              <span className={styles.w3}>{i18n.language === 'en' ? 'Sewa' : 'सेवा'}</span>
+              <span className={styles.w4}>{i18n.language === 'en' ? 'Sangh' : 'संघ'}</span>
+            </span>
+            <small className={styles.logoSub}>NGO · {i18n.language === 'en' ? 'Singrauli, MP' : 'सिंगरौली, MP'}</small>
           </div>
         </NavLink>
 
@@ -46,6 +54,21 @@ export default function Navbar() {
               {t(`nav.${KEYS[i]}`)}
             </NavLink>
           ))}
+          <div className={styles.dropdown}>
+            <button className={styles.dropbtn}>{t(`nav.schemes`)}</button>
+            <div className={styles.dropdownContent}>
+              {DROPDOWNPAGES.map((path, i) => (
+                <NavLink
+                  key={path}
+                  to={path}
+                  end={path === '/'}
+                  className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+                >
+                  {t(`nav.${DROPDOWNKEYS[i]}`)}
+                </NavLink>
+              ))}
+            </div>
+          </div>
           <button className={styles.langBtn} onClick={switchLang} aria-label="Change language">
             {i18n.language === 'en' ? 'हिन्दी' : 'English'}
           </button>
@@ -82,6 +105,36 @@ export default function Navbar() {
               {t(`nav.${KEYS[i]}`)}
             </NavLink>
           ))}
+          <div className={styles.mobileDropdown}>
+            <button
+              className={styles.mobileDropbtn}
+              onClick={() => setMobileDropOpen(v => !v)}
+              aria-expanded={mobileDropOpen}
+            >
+              {t(`nav.schemes`)}
+              <svg
+                className={`${styles.chevron} ${mobileDropOpen ? styles.chevronOpen : ''}`}
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div className={`${styles.mobileDropContent} ${mobileDropOpen ? styles.mobileDropContentOpen : ''}`}>
+              {DROPDOWNPAGES.map((path, i) => (
+                <NavLink
+                  key={path}
+                  to={path}
+                  end={path === '/'}
+                  className={({ isActive }) => `${styles.mobileNestedLink} ${isActive ? styles.mobileActive : ''}`}
+                  onClick={close}
+                >
+                  {t(`nav.${DROPDOWNKEYS[i]}`)}
+                </NavLink>
+              ))}
+            </div>
+          </div>
           <button className={`${styles.mobileLink} ${styles.mobileDonate}`} onClick={() => { navigate('/donate'); close(); }}>
             ❤ {t('nav.donate')}
           </button>

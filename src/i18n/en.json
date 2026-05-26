@@ -7,7 +7,8 @@
     "gallery": "Gallery",
     "contact": "Contact",
     "donate": "Donate",
-    "join": "Join"
+    "join": "Join",
+    "circulars": "Circulars"
   },
   "a11y": {
     "label": "Accessibility",
@@ -22,7 +23,7 @@
   "hero": {
     "eyebrow": "Singrauli · Madhya Pradesh",
     "title_1": "Helping ",
-    "title_bold": "Persons with Disabilities",
+    "title_bold": "Divyangjan",
     "title_2": " live with dignity",
     "subtitle": "विकलांगजनों के लिए समर्पित",
     "body": "We are an NGO based in Singrauli, MP. We help PWD get government ID cards, pensions, wheelchairs, and equal opportunities — free of charge.",
@@ -75,7 +76,7 @@
     ],
     "join_btn": "Join Now",
     "form_title": "Register as Member",
-    "call_notice": "Need help filling this form? Call us at +91 98765 43210 — we will fill it for you.",
+    "call_notice": "Need help filling this form? Call us at +91 94243 48178 — we will fill it for you.",
     "fields": {
       "name":       "Full Name",
       "phone":      "Phone Number",
@@ -173,9 +174,9 @@
     "title": "Contact Us",
     "subtitle": "We are here to help. Call us, write to us, or visit our office.",
     "address_label": "Our Office",
-    "address": "Near Bus Stand, Civil Lines, Singrauli, MP — 486886",
+    "address": "Waidhan, Singrauli, MP — 486886",
     "phone_label": "Helpline",
-    "phone": "+91 98765 43210",
+    "phone": "+91 94243 48178",
     "email_label": "Email Us",
     "email": "info@aadarshviklang.org",
     "hours_label": "Office Hours",
@@ -199,5 +200,29 @@
     "legal_links": ["Privacy Policy", "Terms of Use", "80G Certificate", "Annual Reports"],
     "copyright": "© 2026 Aadarsh Viklang Sewa Sangh. All rights reserved.",
     "reg": "Registered NGO · Singrauli, MP"
+  },
+  "circulars": {
+    "title": "Circulars & Government Orders",
+    "subtitle": "Stay updated with the latest orders, notifications and policy documents.",
+    "search_placeholder": "Search by title or date...",
+    "sort_newest": "Newest first",
+    "sort_oldest": "Oldest first",
+    "sort_az": "A to Z",
+    "filter_all": "All",
+    "filter_policy": "Policy",
+    "filter_pension": "Pension",
+    "filter_legal": "Legal",
+    "filter_general": "General",
+    "col_sno": "S.No.",
+    "col_date": "Date",
+    "col_title": "Title",
+    "col_download": "Download",
+    "view_pdf": "View PDF",
+    "no_results": "No circulars found matching your search.",
+    "showing": "Showing {{from}}–{{to}} of {{total}}",
+    "prev": "Previous",
+    "next": "Next",
+    "help_title": "Need help with any circular?",
+    "help_body": "Can't find the circular? Call our helpline."
   }
 }

@@ -50,7 +50,7 @@ export default function MembershipForm() {
           <input
             id="m_phone" type="tel" className={`form-input ${errors.phone ? 'error' : ''}`}
             autoComplete="tel" inputMode="tel" value={values.phone} onChange={set('phone')}
-            placeholder="+91 98765 43210"
+            placeholder="+91 94243 48178"
             aria-describedby={`m_phone-hint${errors.phone ? ' m_phone-error' : ''}`}
           />
         </FormGroup>

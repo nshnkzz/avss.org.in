@@ -102,8 +102,43 @@ img { max-width: 100%; display: block; }
 .page-hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.65rem; line-height: 1.2; }
 .page-hero p  { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 580px; margin: 0 auto; line-height: 1.75; }
 
+/* Data table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.data-table thead tr { background: var(--navy); color: white; }
+.data-table th {
+  padding: 0.9rem 1.25rem;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.data-table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--text);
+  vertical-align: top;
+}
+.data-table tbody tr:last-child td { border-bottom: none; }
+.circular-link { color: var(--navy-mid); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.circular-link:hover { color: var(--saffron); }
+.circular-dl-btn { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 6px; color: var(--navy-mid); transition: color 0.18s, background 0.18s; }
+.circular-dl-btn:hover { color: var(--saffron); background: var(--saffron-light); }
+.data-table tbody tr:nth-child(even) { background: var(--navy-light); }
+.data-table tbody tr:hover { background: var(--saffron-light); }
+
 @media (max-width: 640px) {
   .section { padding: 3rem 0; }
   .page-hero h1 { font-size: 1.75rem; }
   .section-title { font-size: 1.6rem; }
+  .data-table th, .data-table td { padding: 0.7rem 0.85rem; font-size: 0.9rem; }
 }

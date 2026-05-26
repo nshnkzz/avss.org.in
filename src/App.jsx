@@ -12,6 +12,7 @@ import About      from './pages/About'
 import Membership from './pages/Membership'
 import Donate     from './pages/Donate'
 import Schemes    from './pages/Schemes'
+import Circulars  from './pages/Circulars'
 import Gallery    from './pages/Gallery'
 import Contact    from './pages/Contact'
 
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/membership" element={<Membership />} />
           <Route path="/donate"     element={<Donate />} />
           <Route path="/schemes"    element={<Schemes />} />
+          <Route path="/circulars"  element={<Circulars />} />
           <Route path="/gallery"    element={<Gallery />} />
           <Route path="/contact"    element={<Contact />} />
         </Routes>
