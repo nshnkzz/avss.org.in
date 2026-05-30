@@ -1,5 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import api from '../../services/api'
+import { useEffect, useState } from 'react'
+import Loader from '../ui/Loader'
 
 // ── What We Do ────────────────────────────────────────────────────────────────
 export function WhatWeDo() {
@@ -78,9 +81,27 @@ export function DonateCTA() {
 
 // ── Membership Preview ────────────────────────────────────────────────────────
 export function MembershipPreview() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const navigate = useNavigate()
-  const plans = t('membership.plans', { returnObjects: true })
+  const [pln, setPlan] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(()=>{
+    api.get("/api/plans").then(
+      data =>{ 
+        setPlan(data)
+        setLoading(false)
+      }
+    ).catch(error=> {
+      console.log(error)
+      setLoading(false)
+    })
+  }, [])
+
+  if (loading) return <Loader />
+  
+  const lang = i18n.language?.startsWith('hi') ? 'hi' : 'en'
+  const plans = pln.map(p => p.description[lang])
 
   return (
     <section className="section">

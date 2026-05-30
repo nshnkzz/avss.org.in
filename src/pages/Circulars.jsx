@@ -2,12 +2,19 @@ import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
-import circulars from '../data/circulars'
+
+import api from '../services/api'
 
 export default function Circulars() {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
   const isEnLang = i18n.language == "en"  // e.g. "en" or "hi"
+
+
+  const [circulars, setCirculars] = useState([])
+  const [loading, setLoading]     = useState(true)
+  const [error, setError]         = useState(null)
+
   const [search, setSearch]   = useState('')
   const [filter, setFilter]   = useState('all')   // all | policy | pension | legal | general
   const [sort, setSort]       = useState('newest') // newest | oldest
@@ -16,6 +23,32 @@ export default function Circulars() {
   const handleSearchFocus = () => {
     setTimeout(() => searchRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300)
   }
+
+  useEffect(() => {
+    api.get('/api/circulars?limit=200')
+      .then(res => {
+        const mapped = res.data.map(c => ({
+          id: c.id,
+          title: c.title.en,
+          title_hi: c.title.hi,
+          category: c.category?.toLowerCase(), // to match filter values
+          date: c.date ? new Date(c.date).toLocaleDateString('en-IN') : '—',
+          url: c.filePath,
+        }))
+        setCirculars(mapped)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error(err)
+        setError(true)
+        setLoading(false)
+      })
+  }, [])
+
+  useEffect(() => setPage(1), [search, filter, sort])
+
+  if(error) setCirculars([])
+
   const PER_PAGE = 10
   const filtered = circulars
   .filter(c => filter === 'all' || c.category === filter)
@@ -35,8 +68,6 @@ export default function Circulars() {
 
 const totalPages = Math.ceil(filtered.length / PER_PAGE)
 const paginated  = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE)
-
-useEffect(() => setPage(1), [search, filter, sort])
   return (
     <>
       <Helmet>
@@ -124,7 +155,25 @@ useEffect(() => setPage(1), [search, filter, sort])
                 </tr>
               </thead>
               <tbody>
-                {paginated.length === 0 ? (
+                {loading ? (
+                  Array.from({ length: 8 }).map((_, i) => (
+                    <tr key={i}>
+                      {Array.from({ length: 4 }).map((_, j) => (
+                        <td key={j}>
+                          <span style={{
+                            display: 'block',
+                            height: '1rem',
+                            borderRadius: '4px',
+                            background: 'linear-gradient(90deg, var(--border) 25%, #e8e8e8 50%, var(--border) 75%)',
+                            backgroundSize: '200% 100%',
+                            animation: 'shimmer 1.4s infinite',
+                            width: j === 2 ? '80%' : j === 0 ? '2rem' : '5rem',
+                          }} />
+                        </td>
+                      ))}
+                    </tr>
+                  ))
+                ) : paginated.length === 0 ? (
                   <tr>
                     <td colSpan={4} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
                       {t('circulars.no_results')}

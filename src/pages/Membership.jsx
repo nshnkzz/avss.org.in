@@ -1,7 +1,10 @@
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import MembershipForm from '../components/forms/MembershipForm'
 import styles from './Membership.module.css'
 import { Helmet } from 'react-helmet-async'
+import api from '../services/api'
+import Loader from '../components/ui/Loader'
 
 function PlanCard({ plan, featured, onJoin, t }) {
   return (
@@ -53,8 +56,27 @@ function PlanCard({ plan, featured, onJoin, t }) {
 }
 
 export default function Membership() {
-  const { t } = useTranslation()
-  const plans = t('membership.plans', { returnObjects: true })
+  const { t, i18n } = useTranslation()
+  const [pln, setPlan] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(()=>{
+    api.get("/api/plans").then(
+      data =>{ 
+        setPlan(data)
+        setLoading(false)
+      }
+    ).catch(error=> {
+      console.log(error)
+      setLoading(false)
+    })
+  }, [])
+
+
+  const lang = i18n.language?.startsWith('hi') ? 'hi' : 'en'
+  const plans = pln.map(p => p.description[lang])
+
+  if (loading) return <Loader />
 
   const scrollToForm = () =>
     document.getElementById('join-form')?.scrollIntoView({ behavior: 'smooth' })
@@ -86,7 +108,7 @@ export default function Membership() {
       </section>
 
       {/* Comparison table — visible on mobile too */}
-      <section className="section">
+      {plans.length >= 2 && <section className="section">
         <div className="container" style={{ maxWidth: 680 }}>
           <div className={styles.compareHeader}>
             <span className="tag tag-saffron">{t('membership.tag')}</span>
@@ -142,7 +164,7 @@ export default function Membership() {
             </button>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* Form */}
       <section className="section section-alt" id="join-form">
@@ -152,7 +174,7 @@ export default function Membership() {
             <h2 className="section-title">{t('membership.form_title')}</h2>
           </div>
           <div className="notice">{t('membership.call_notice')}</div>
-          <MembershipForm />
+          <MembershipForm plans={pln}/>
         </div>
       </section>
     </>

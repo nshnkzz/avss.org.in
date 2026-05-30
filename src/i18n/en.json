@@ -189,7 +189,9 @@
     "success": "Message sent! We will reply within 1 working day.",
     "error_name": "Please enter your name",
     "error_phone": "Please enter your phone number",
-    "error_message": "Please enter your message"
+    "error_message": "Please enter your message",
+    "error_server": "Something went wrong. Please try again later.",
+    "submitting": "Sending..."
   },
   "footer": {
     "about": "An NGO helping Persons with Disabilities in Singrauli, Madhya Pradesh.",
