@@ -52,7 +52,7 @@
 
 /* Cards */
 .card {
-  background: white;
+  background: var(--bg-surface);
   border-radius: var(--radius);
   border: 2px solid var(--border);
   padding: 1.75rem;
@@ -69,7 +69,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   border: 2px solid var(--border);
-  background: white;
+  background: var(--bg-surface);
   color: var(--text);
   min-height: var(--tap-min);
   transition: all 0.15s;
@@ -94,7 +94,7 @@
   font-size: 1rem;
   font-family: inherit;
   color: var(--text);
-  background: white;
+  background: var(--bg-surface);
   min-height: var(--tap-min);
   transition: border-color 0.15s;
   appearance: none;
@@ -109,7 +109,7 @@ select.form-input {
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
-.form-box { background: white; border-radius: var(--radius); border: 2px solid var(--border); padding: 2rem; box-shadow: var(--shadow); }
+.form-box { background: var(--bg-surface); border-radius: var(--radius); border: 2px solid var(--border); padding: 2rem; box-shadow: var(--shadow); }
 
 /* Search + sort row — side by side on desktop, stacked on mobile */
 .search-sort-row {
@@ -137,7 +137,7 @@ select.form-input {
   border: 2px solid var(--border);
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: white;
+  background: var(--bg-surface);
   flex: 1;
   min-width: 0;
   box-shadow: var(--shadow);

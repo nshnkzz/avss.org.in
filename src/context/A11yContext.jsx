@@ -13,6 +13,9 @@ export function A11yProvider({ children }) {
   const [motion, setMotionState] = useState(
     () => localStorage.getItem('avss-motion') !== 'false'
   )
+  const [darkMode, setDarkModeState] = useState(
+    () => localStorage.getItem('avss-dark') === 'true'
+  )
 
   const setTextSize = (s) => {
     setTextSizeState(s)
@@ -25,6 +28,10 @@ export function A11yProvider({ children }) {
   const setMotion = (v) => {
     setMotionState(v)
     localStorage.setItem('avss-motion', v)
+  }
+  const setDarkMode = (v) => {
+    setDarkModeState(v)
+    localStorage.setItem('avss-dark', v)
   }
 
   // Apply classes to <html>
@@ -44,8 +51,12 @@ export function A11yProvider({ children }) {
     document.documentElement.classList.toggle('a11y-no-motion', !motion)
   }, [motion])
 
+  useEffect(() => {
+    document.documentElement.classList.toggle('a11y-dark', darkMode)
+  }, [darkMode])
+
   return (
-    <A11yContext.Provider value={{ textSize, setTextSize, contrast, setContrast, motion, setMotion }}>
+    <A11yContext.Provider value={{ textSize, setTextSize, contrast, setContrast, motion, setMotion, darkMode, setDarkMode }}>
       {children}
     </A11yContext.Provider>
   )

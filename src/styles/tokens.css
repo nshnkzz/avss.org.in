@@ -18,6 +18,9 @@
   --border:         #D6D9DE;
   --focus:          #FFC107;
 
+  /* Surface — white in light mode, overridden per theme */
+  --bg-surface:     #FFFFFF;
+
   /* Sizing — overridden by a11y modes */
   --font-size-base: 17px;
   --line-height:    1.65;

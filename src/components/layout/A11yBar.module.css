@@ -53,7 +53,19 @@
 .btn.on { background: var(--saffron); border-color: white; }
 .ind { font-size: 0.7rem; opacity: 0.75; }
 
+.sep {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 0.15rem;
+  flex-shrink: 0;
+}
+
+.themeBtn { gap: 0.4rem; }
+
 @media (max-width: 640px) {
   .label { display: none; }
   .bar { position: relative; top: auto; }
+  .sep { display: none; }
 }

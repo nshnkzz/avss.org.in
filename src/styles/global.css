@@ -92,7 +92,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* Stat tile */
-.stat-tile { background: white; border: 2px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.25rem; text-align: center; }
+.stat-tile { background: var(--bg-surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.25rem; text-align: center; }
 .stat-num   { font-size: 2.5rem; font-weight: 700; color: var(--saffron); line-height: 1; }
 .stat-label { font-size: 1rem; color: var(--navy); margin-top: 0.5rem; font-weight: 600; }
 
@@ -111,7 +111,7 @@ img { max-width: 100%; display: block; }
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  background: var(--bg-surface);
   border-radius: var(--radius);
   border: 2px solid var(--border);
   box-shadow: var(--shadow);

@@ -20,6 +20,7 @@
     "xlarge": "X-Large",
     "contrast": "High Contrast",
     "motion": "Reduce Motion",
+    "dark": "Dark Mode",
     "skip": "Skip to main content"
   },
   "hero": {

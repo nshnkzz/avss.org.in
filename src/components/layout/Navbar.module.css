@@ -1,5 +1,5 @@
 .nav {
-  background: white;
+  background: var(--bg-surface);
   border-bottom: 2px solid var(--border);
   box-shadow: 0 1px 6px rgba(0,0,0,0.04);
   position: sticky;
@@ -101,7 +101,7 @@
   align-items: center; justify-content: center;
   border: 2px solid var(--navy);
   border-radius: var(--radius-sm);
-  background: white;
+  background: var(--bg-surface);
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -117,7 +117,7 @@
 .mobileMenu {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: var(--bg-surface);
   border-top: 2px solid var(--border);
   padding: 0.5rem 1.5rem 1.25rem;
 }
@@ -197,7 +197,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   min-width: 160px;
