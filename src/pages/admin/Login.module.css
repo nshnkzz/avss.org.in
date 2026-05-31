@@ -1,0 +1,98 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logoIcon {
+  font-size: 2.5rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0.25rem 0 0;
+}
+
+.logoSub {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0.25rem 0 0;
+}
+
+.error {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.field {
+  margin-bottom: 1.25rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #1e3a5f;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #1e3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.9;
+}

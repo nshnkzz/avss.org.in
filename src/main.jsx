@@ -10,6 +10,7 @@ import './styles/tokens.css'
 import './styles/global.css'
 import './styles/a11y.css'
 import './styles/utils.css'
+import { AuthProvider } from './context/AuthContext'
 
 // Restore lang body class on first load
 const savedLang = localStorage.getItem('avss-lang') || 'en'
@@ -19,13 +20,15 @@ document.documentElement.lang = savedLang
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HelmetProvider>
     <React.StrictMode>
-      <BrowserRouter>
-        <I18nextProvider i18n={i18n}>
-          <A11yProvider>
-            <App />
-          </A11yProvider>
-        </I18nextProvider>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <I18nextProvider i18n={i18n}>
+            <A11yProvider>
+              <App />
+            </A11yProvider>
+          </I18nextProvider>
+        </BrowserRouter>
+      </AuthProvider>
     </React.StrictMode>
   </HelmetProvider>
 )

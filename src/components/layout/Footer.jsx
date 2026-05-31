@@ -5,7 +5,8 @@ import styles from './Footer.module.css'
 export default function Footer() {
   const { t } = useTranslation()
   const PAGES = [['/', 'home'], ['/about', 'about'], ['/membership', 'membership'],
-                ['/schemes', 'schemes'], ['/gallery', 'gallery'], ['/contact', 'contact'], ['/circulars', 'circulars']]
+                ['/schemes', 'schemes'], ['/gallery', 'gallery'], ['/articles', 'articles'],
+                ['/contact', 'contact'], ['/circulars', 'circulars']]
 
   return (
     <footer className={styles.footer}>
@@ -50,6 +51,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <span>{t('footer.copyright')}</span>
           <span className={styles.badge}>{t('footer.reg')}</span>
+          <Link to="/admin/login" className={styles.adminLink}>Admin</Link>
         </div>
       </div>
     </footer>

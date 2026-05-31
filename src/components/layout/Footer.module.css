@@ -37,6 +37,14 @@
   flex-wrap: wrap;
   gap: 0.75rem;
 }
+.adminLink {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.adminLink:hover { color: rgba(255,255,255,0.7); }
+
 .badge {
   background: var(--saffron);
   color: white;

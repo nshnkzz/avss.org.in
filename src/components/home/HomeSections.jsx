@@ -167,6 +167,71 @@ export function PlanCard({ plan, featured, onJoin }) {
   )
 }
 
+// ── How We Help You (featured articles) ───────────────────────────────────────
+export function HowWeHelpYou() {
+  const navigate = useNavigate()
+  const [articles, setArticles] = useState([])
+  const [loading, setLoading]   = useState(true)
+
+  useEffect(() => {
+    api.get('/api/articles/featured')
+      .then(data => { setArticles(data); setLoading(false) })
+      .catch(() => setLoading(false))
+  }, [])
+
+  if (!loading && articles.length === 0) return null
+
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="section-header text-center">
+          <span className="tag tag-saffron">Resources</span>
+          <h2 className="section-title">How We Help You</h2>
+          <p className="section-sub">Guides and information to help Divyangjan access schemes, documents, and support.</p>
+        </div>
+        <div className="card-grid grid-3" style={{ marginTop: '2.5rem' }}>
+        {loading && [0,1,2].map(i => (
+            <div key={i} className="card">
+              <div style={{ ...shimmer, width: 64, height: 64, borderRadius: 'var(--radius-sm)', marginBottom: '1.25rem' }} />
+              <div style={{ ...shimmer, height: 18, width: '65%', marginBottom: '0.6rem' }} />
+              <div style={{ ...shimmer, height: 13, width: '90%', marginBottom: '0.4rem' }} />
+              <div style={{ ...shimmer, height: 13, width: '75%' }} />
+            </div>
+          ))}
+          {articles.map(article => (
+            <article
+              key={article.slug}
+              className="card"
+              onClick={() => navigate(`/articles/${article.slug}`)}
+              style={{ cursor: 'pointer' }}
+            >
+              <div style={articleImgWrap} aria-hidden="true">
+                {article.imagePath
+                  ? <img src={article.imagePath} alt="" style={articleImgStyle} />
+                  : <div style={articleImgFallback} />
+                }
+              </div>
+              <h3 style={cardH3}>{article.title}</h3>
+              {article.excerpt && <p style={cardP}>{article.excerpt}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const shimmer = {
+  background: 'linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%)',
+  backgroundSize: '200% 100%',
+  animation: 'shimmer 1.5s infinite',
+  borderRadius: 4,
+}
+
+const articleImgWrap     = { width: 64, height: 64, borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: '1.25rem', border: '2px solid var(--border)', flexShrink: 0 }
+const articleImgStyle    = { width: '100%', height: '100%', objectFit: 'cover', display: 'block' }
+const articleImgFallback = { width: '100%', height: '100%', background: 'var(--saffron-light)' }
+
 // Shared mini styles
 const iconStyle = {
   width: 64, height: 64,

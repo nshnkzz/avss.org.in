@@ -1,6 +1,6 @@
 import HeroCarousel from '../components/home/HeroCarousel'
 import { Helmet } from 'react-helmet-async'
-import { WhatWeDo, ImpactStats, DonateCTA, MembershipPreview } from '../components/home/HomeSections'
+import { HowWeHelpYou, ImpactStats, DonateCTA, MembershipPreview } from '../components/home/HomeSections'
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
       </Helmet>
       <HeroCarousel />
-      <WhatWeDo />
+      <HowWeHelpYou />
       <ImpactStats />
       <DonateCTA />
       <MembershipPreview />

@@ -1,0 +1,139 @@
+.loading, .empty { padding: 2rem 0; color: #64748b; }
+.error { color: #dc2626; padding: 2rem 0; }
+
+.header { margin-bottom: 1.5rem; }
+.title { font-size: 1.75rem; font-weight: 700; color: #1e3a5f; margin: 0 0 0.25rem; }
+.sub { color: #64748b; margin: 0; font-size: 0.95rem; }
+
+/* Upload card */
+.uploadCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.uploadTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e3a5f;
+  margin: 0 0 1.25rem;
+}
+
+.uploadError {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.input {
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus { border-color: #1e3a5f; }
+
+.uploadBtn {
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: #1e3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.uploadBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+.uploadBtn:hover:not(:disabled) { opacity: 0.9; }
+
+/* Table */
+.tableWrap {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+
+.table th {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background: #f8fafc; }
+
+.viewLink { color: #1e3a5f; font-weight: 500; text-decoration: underline; }
+
+.btn {
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btnDelete { background: #fee2e2; color: #dc2626; }
+.btnDelete:hover:not(:disabled) { background: #fecaca; }
+
+@media (max-width: 640px) {
+  .formRow { grid-template-columns: 1fr; }
+}
+
+/* in Circulars.module.css, add a 3-col variant */
+.formRow3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .formRow3 { grid-template-columns: 1fr; }
+}

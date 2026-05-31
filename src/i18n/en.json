@@ -8,7 +8,9 @@
     "contact": "Contact",
     "donate": "Donate",
     "join": "Join",
-    "circulars": "Circulars"
+    "circulars": "Circulars",
+    "resources": "Resources",
+    "articles": "Articles"
   },
   "a11y": {
     "label": "Accessibility",
@@ -202,6 +204,22 @@
     "legal_links": ["Privacy Policy", "Terms of Use", "80G Certificate", "Annual Reports"],
     "copyright": "© 2026 Aadarsh Viklang Sewa Sangh. All rights reserved.",
     "reg": "Registered NGO · Singrauli, MP"
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Guides, updates and news for Persons with Disabilities",
+    "read_more": "Read more →",
+    "error_load": "Could not load articles. Please try again.",
+    "retry": "Retry",
+    "empty": "No articles published yet. Check back soon.",
+    "count_one": "{{count}} article",
+    "count_other": "{{count}} articles",
+    "not_found_title": "Article not found",
+    "not_found_body": "This article may have been removed or the link is incorrect.",
+    "error_title": "Something went wrong",
+    "error_body": "Could not load this article. Please try again.",
+    "back_all": "← All Articles",
+    "back_link": "← Back to Articles"
   },
   "circulars": {
     "title": "Circulars & Government Orders",

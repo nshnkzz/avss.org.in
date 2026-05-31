@@ -6,8 +6,8 @@ import styles from './Navbar.module.css'
 
 const PAGES = ['/', '/about', '/membership', '/gallery', '/contact']
 const KEYS  = ['home', 'about', 'membership', 'gallery', 'contact']
-const DROPDOWNPAGES = ['/schemes', '/circulars']
-const DROPDOWNKEYS = ['schemes', 'circulars']
+const DROPDOWNPAGES = ['/schemes', '/circulars', '/articles']
+const DROPDOWNKEYS  = ['schemes', 'circulars', 'articles']
 
 export default function Navbar() {
   const { t } = useTranslation()
@@ -55,7 +55,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <div className={styles.dropdown}>
-            <button className={styles.dropbtn}>{t(`nav.schemes`)}</button>
+            <button className={styles.dropbtn}>{t('nav.resources', 'Resources')}</button>
             <div className={styles.dropdownContent}>
               {DROPDOWNPAGES.map((path, i) => (
                 <NavLink
@@ -111,7 +111,7 @@ export default function Navbar() {
               onClick={() => setMobileDropOpen(v => !v)}
               aria-expanded={mobileDropOpen}
             >
-              {t(`nav.schemes`)}
+              {t('nav.resources', 'Resources')}
               <svg
                 className={`${styles.chevron} ${mobileDropOpen ? styles.chevronOpen : ''}`}
                 viewBox="0 0 24 24" fill="none" stroke="currentColor"

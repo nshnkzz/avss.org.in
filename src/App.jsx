@@ -14,21 +14,31 @@ import Donate     from './pages/Donate'
 import Schemes    from './pages/Schemes'
 import Circulars  from './pages/Circulars'
 import Gallery    from './pages/Gallery'
-import Contact    from './pages/Contact'
+import Contact     from './pages/Contact'
+import Articles    from './pages/Articles'
+import ArticlePage from './pages/ArticlePage'
 
-// Scroll to top on route change
+import PrivateRoute from './components/PrivateRoute'
+import AdminLogin  from './pages/admin/Login'
+import AdminLayout from './pages/admin/AdminLayout'
+import Dashboard   from './pages/admin/Dashboard'
+import Members from './pages/admin/Members'
+import Inquiries from './pages/admin/Inquiries'
+import AdminCirculars from './pages/admin/Circulars'
+import AdminGallery from './pages/admin/Gallery'
+import AdminArticles from './pages/admin/Articles'
+import AdminPlans from './pages/admin/Plans'
+
+
+
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }, [pathname])
   return null
 }
 
-export default function App() {
-  const { textSize, contrast, motion } = useA11y()
-
-  // A11y classes on <html> are managed inside A11yContext useEffects.
-  // This component just consumes them to ensure re-render.
-
+// Public site layout — with Navbar, Footer, A11yBar
+function PublicLayout() {
   return (
     <>
       <SkipLink />
@@ -44,10 +54,40 @@ export default function App() {
           <Route path="/schemes"    element={<Schemes />} />
           <Route path="/circulars"  element={<Circulars />} />
           <Route path="/gallery"    element={<Gallery />} />
-          <Route path="/contact"    element={<Contact />} />
+          <Route path="/contact"        element={<Contact />} />
+          <Route path="/articles"       element={<Articles />} />
+          <Route path="/articles/:slug" element={<ArticlePage />} />
         </Routes>
       </main>
       <Footer />
     </>
+  )
+}
+
+export default function App() {
+  const { textSize, contrast, motion } = useA11y()
+  const { pathname } = useLocation()
+
+  const isAdmin = pathname.startsWith('/admin')
+
+  return isAdmin ? (
+    <Routes>
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin" element={
+        <PrivateRoute>
+          <AdminLayout />
+        </PrivateRoute>
+      }>
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="members" element={<Members />} />
+        <Route path="inquiries" element={<Inquiries />} />
+        <Route path="circulars" element={<AdminCirculars />} />
+        <Route path="gallery" element={<AdminGallery />} />
+        <Route path="articles" element={<AdminArticles />} />
+        <Route path="plans"    element={<AdminPlans />} />
+      </Route>
+    </Routes>
+  ) : (
+    <PublicLayout />
   )
 }

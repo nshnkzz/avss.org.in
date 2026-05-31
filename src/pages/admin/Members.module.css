@@ -1,0 +1,125 @@
+.loading, .error {
+  padding: 2rem 0;
+  color: #64748b;
+}
+
+.error { color: #dc2626; }
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0 0 0.25rem;
+}
+
+.sub {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: #f8fafc;
+}
+
+.empty {
+  text-align: center;
+  color: #94a3b8;
+  padding: 2rem !important;
+}
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.green  { background: #dcfce7; color: #16a34a; }
+.orange { background: #ffedd5; color: #ea580c; }
+.red    { background: #fee2e2; color: #dc2626; }
+.grey   { background: #f1f5f9; color: #64748b; }
+
+/* Action buttons */
+.actions {
+  white-space: nowrap;
+}
+
+.btn {
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnApprove {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.btnApprove:hover:not(:disabled) {
+  background: #bbf7d0;
+}
+
+.btnCancel {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.btnCancel:hover:not(:disabled) {
+  background: #fecaca;
+}
+
+.noAction {
+  color: #94a3b8;
+}
