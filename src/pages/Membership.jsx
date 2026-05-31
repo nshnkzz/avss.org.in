@@ -74,7 +74,7 @@ export default function Membership() {
 
 
   const lang = i18n.language?.startsWith('hi') ? 'hi' : 'en'
-  const plans = pln.map(p => p.description[lang])
+  const plans = pln.map(p => ({ ...p.description[lang], status: p.status, id: p.id }))
 
   if (loading) return <Loader />
 
@@ -96,9 +96,9 @@ export default function Membership() {
           <div className={styles.plansGrid}>
             {plans.map((plan, i) => (
               <PlanCard
-                key={i}
+                key={plan.id ?? i}
                 plan={plan}
-                featured={i === 1}
+                featured={plan.status === 'HIGHLIGHTED'}
                 onJoin={scrollToForm}
                 t={t}
               />
