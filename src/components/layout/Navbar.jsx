@@ -30,7 +30,9 @@ export default function Navbar() {
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
         <NavLink to="/" className={styles.logo} aria-label="Aadarsh Viklang Sewa Sangh — Home" onClick={close}>
-          <div className={styles.logoIcon} aria-hidden="true">आ</div>
+          <span className={styles.logoIcon} aria-hidden="true">
+            <img src="/images/avss-logo.jpg" className={styles.logoImg} alt="" />
+          </span>
           <div className={styles.logoText}>
             <span className={styles.nameWords}>
               <span className={styles.w1}>{i18n.language === 'en' ? 'Aadarsh' : 'आदर्श'}</span>

@@ -28,6 +28,7 @@ import AdminCirculars from './pages/admin/Circulars'
 import AdminGallery from './pages/admin/Gallery'
 import AdminArticles from './pages/admin/Articles'
 import AdminPlans from './pages/admin/Plans'
+import AdminAdmins from './pages/admin/Admins'
 
 
 
@@ -85,6 +86,7 @@ export default function App() {
         <Route path="gallery" element={<AdminGallery />} />
         <Route path="articles" element={<AdminArticles />} />
         <Route path="plans"    element={<AdminPlans />} />
+        <Route path="admins"   element={<AdminAdmins />} />
       </Route>
     </Routes>
   ) : (

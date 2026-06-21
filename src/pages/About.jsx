@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import team from '../data/team'
+import styles from './About.module.css'
 
 export default function About() {
   const { t, i18n } = useTranslation()
@@ -51,22 +52,11 @@ export default function About() {
                 </button>
               </div>
             </div>
-            {/* Placeholder illustration */}
-            <div style={{
-              background: 'linear-gradient(135deg, var(--saffron-light), var(--navy-light))',
-              borderRadius: 'var(--radius)',
-              padding: '3rem',
-              textAlign: 'center',
-              border: '2px solid var(--border)',
-              minHeight: 300,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'column',
-              gap: '1rem',
-            }} aria-hidden="true">
-              <span style={{ fontSize: '5rem' }}>♿</span>
-              <p style={{ color: 'var(--navy-mid)', fontWeight: 600 }}>Aadarsh Viklang Sewa Sangh</p>
+            {/* Logo */}
+            <div className={styles.logoPanel}>
+              <span className={styles.logoWrap}>
+                <img src="/images/avss-logo.jpg" alt="Aadarsh Viklang Sewa Sangh Logo" />
+              </span>
             </div>
           </div>
         </div>

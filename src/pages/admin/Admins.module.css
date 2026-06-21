@@ -1,0 +1,426 @@
+.loading, .error {
+  padding: 2rem 0;
+  color: #64748b;
+}
+.error { color: #dc2626; }
+
+.header { margin-bottom: 1.5rem; }
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0 0 0.25rem;
+}
+
+.sub {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ── Table ──────────────────────────────────── */
+.tableWrap {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background: #f8fafc; }
+
+.empty {
+  text-align: center;
+  color: #94a3b8;
+  padding: 2rem !important;
+}
+
+.email {
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.youBadge {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #64748b;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ── Role badges ────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.navy   { background: #dbeafe; color: #1e3a5f; }
+.blue   { background: #e0f2fe; color: #0369a1; }
+.purple { background: #ede9fe; color: #6d28d9; }
+
+/* ── Actions ────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.roleSelect {
+  padding: 0.3rem 0.55rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #1e293b;
+  background: #f8fafc;
+  cursor: pointer;
+  font-family: inherit;
+}
+.roleSelect:focus { outline: none; border-color: #1e3a5f; }
+.roleSelect:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn {
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btnReset  { background: #e0f2fe; color: #0369a1; }
+.btnReset:hover:not(:disabled)  { background: #bae6fd; }
+
+.btnDelete { background: #fee2e2; color: #dc2626; }
+.btnDelete:hover:not(:disabled) { background: #fecaca; }
+
+/* ── FAB ────────────────────────────────────── */
+.fab {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  background: #1e3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(30,58,95,0.4);
+  z-index: 80;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.fab:hover {
+  background: #163050;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(30,58,95,0.5);
+}
+.fab:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(30,58,95,0.3);
+}
+
+/* ── Modal ──────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  padding: 1rem;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 600px) {
+  .overlay { align-items: flex-end; padding: 0; }
+  .modal { border-radius: 16px 16px 0 0; max-width: 100%; max-height: 92vh; }
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.modalTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: color 0.15s;
+}
+.closeBtn:hover { color: #1e293b; }
+
+/* ── Form ───────────────────────────────────── */
+.form {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.req { color: #dc2626; }
+
+.input {
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  font-family: inherit;
+  background: #f8fafc;
+  transition: border-color 0.15s;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.input:focus { border-color: #1e3a5f; background: #fff; }
+
+.passwordWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.passwordWrap .input {
+  padding-right: 2.5rem;
+}
+.eyeBtn {
+  position: absolute;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: color 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.eyeBtn:hover { color: #1e3a5f; }
+
+.resetFor {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #475569;
+  padding: 0.6rem 0.85rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+}
+.resetFor strong { color: #1e3a5f; }
+
+.roleHint {
+  margin: -0.25rem 0 0;
+  font-size: 0.82rem;
+  color: #64748b;
+  min-height: 1.2em;
+}
+
+.formError {
+  margin: 0;
+  padding: 0.6rem 0.85rem;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.formActions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.25rem;
+}
+
+.cancelBtn {
+  padding: 0.55rem 1.1rem;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.cancelBtn:hover:not(:disabled) { background: #f8fafc; }
+.cancelBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.submitBtn {
+  padding: 0.55rem 1.25rem;
+  background: #1e3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.submitBtn:hover:not(:disabled) { background: #163050; }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── Mobile card layout ─────────────────────── */
+@media (max-width: 640px) {
+  /* Strip the table wrapper — cards carry their own surface */
+  .tableWrap {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow-x: visible;
+  }
+
+  /* Collapse table structure */
+  .table, .table tbody { display: block; }
+  .table thead { display: none; }
+
+  /* Each row becomes a card */
+  .table tr {
+    display: block;
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    padding: 0.85rem 1rem 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #f1f5f9;
+  }
+  .table tr:hover td { background: transparent; }
+  .table tr:last-child { margin-bottom: 5rem; /* clear FAB */ }
+
+  /* All cells block by default, no padding/border */
+  .table td {
+    display: block;
+    padding: 0;
+    border: none;
+  }
+
+  /* ── Column 1: # — hidden on mobile ── */
+  .table td:nth-child(1) { display: none; }
+
+  /* ── Column 2: Email — full width, prominent ── */
+  .table td:nth-child(2) {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.45rem;
+  }
+
+  /* ── Column 3: Role badge — inline ── */
+  .table td:nth-child(3) {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    vertical-align: middle;
+  }
+
+  /* ── Column 4: Date — inline after badge ── */
+  .table td:nth-child(4) {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    vertical-align: middle;
+    margin-bottom: 0.75rem;
+    margin-left: 0.5rem;
+  }
+  .table td:nth-child(4)::before {
+    content: '· ';
+    color: #cbd5e1;
+  }
+
+  /* ── Column 5: Actions — full width below a divider ── */
+  .table td:nth-child(5) {
+    border-top: 1px solid #f1f5f9;
+    padding: 0.6rem 0 0.7rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    white-space: normal;
+  }
+
+  /* Role select stretches to fill remaining space */
+  .roleSelect { flex: 1; min-width: 110px; }
+
+  /* Slightly larger touch targets */
+  .btn { padding: 0.45rem 0.85rem; }
+}

@@ -101,6 +101,14 @@ export function IconMenu({ size = 18 }) {
   )
 }
 
+export function IconShield({ size = 18 }) {
+  return (
+    <Svg size={size}>
+      <path d="M12 2L3 6.5v6c0 4.75 3.8 9.2 9 10.5 5.2-1.3 9-5.75 9-10.5v-6L12 2z" />
+    </Svg>
+  )
+}
+
 export function IconLogo({ size = 24 }) {
   return (
     <Svg size={size}>

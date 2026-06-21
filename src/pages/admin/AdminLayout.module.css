@@ -39,6 +39,20 @@
   font-size: 0.75rem;
 }
 
+.roleBadge {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.roleSUPER_ADMIN { background: rgba(255,255,255,0.18); color: #fff; }
+.roleSTAFF       { background: rgba(14,165,233,0.3);   color: #7dd3fc; }
+.roleDESIGNER    { background: rgba(167,139,250,0.3);  color: #c4b5fd; }
+
 .nav {
   flex: 1;
   padding: 1rem 0.75rem;
